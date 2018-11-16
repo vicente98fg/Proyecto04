@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<script type = "text/javascript">
+
+//Variables y arrays colores
+
+var fila1 = [2,6,5,4,5,5];
+var color1 = ["blue","yellow","magenta","red","yellow","blue"];
+var fila2 = [4,6,6,3,2,6];
+var color2 = ["blue","white","magenta","red","yellow","blue"];
+var fila3 = [3,4,1,2,6,3];
+var color3 = ["blue","yellow","blue","red","red","magenta"];
+var fila4 = [1,4,2,5,6,1];
+var color4 = ["magenta","white","magenta","red","green","red"];
+var fila5 = [5,5,3,2,2,1];
+var color5 = ["green","white","green","green","white","yellow"];
+var fila6 = [4,1,4,3,1,3];
+var color6 = ["green","white","magenta","white","green","yellow"];
+
+var long1 = fila1.length;
+var long2 = fila2.length;
+var long3 = fila3.length;
+var long4 = fila4.length;
+var long5 = fila5.length;
+var long6 = fila6.length;
+
+var i = 0;
+
+
+//Generamos variables para las posiciones y randomizamos numeros
+
+var posInicial=[0,0];
+var posFinal=[0,0];
+
+var num1 = +Math.floor((Math.random() * 6) + 1); //Posicion incial 1
+var num2 = +Math.floor((Math.random() * 6) + 1); //Posicion inicial 2
+var num3 = +Math.floor((Math.random() * 6) + 1); //Posicion final 1
+var num4 = +Math.floor((Math.random() * 6) + 1); //Posicion final 2
+
+
+//Quitamos que la posibilidad de que la posicion inicial pueda ser igual a la final
+
+while (num1 === num3) {
+    num3 = +Math.floor((Math.random() * 6) + 1);
+}
+
+while (num2 === num4) {
+    num4 = +Math.floor((Math.random() * 6) + 1);
+}
+
+
+//Funcion para generar las casillas aleatorias
+
+function casillaAleatoria() {
+    for (var i = 0; i < 1; i++) {
+        console.log(posInicial[posInicial.length-2] = num1);
+    }
+    for (var i = 0; i < 1; i++) {
+        console.log(posInicial[posInicial.length-1] = num2);
+    }
+    for (var i = 0; i < 1; i++) {
+        console.log(posFinal[posFinal.length-2] = num3);
+    }
+    for (var i = 0; i < 1; i++) {
+        console.log(posFinal[posFinal.length-1] = num4);
+    }
+}
+
+var random = casillaAleatoria();
+
+
+//splice de la posInicial y posFinal
+
+posInicial.splice(0,1,`${posInicial}`);
+posInicial.splice(0,0,`${posInicial}`);
+posFinal.splice(1,1,`${posFinal}`);
+posFinal.splice(1,0,`${posFinal}`);
+
+
+//Funcion colorear tabla
+
+function tabla(fila1) {
+    document.write("<table>")
+    document.write("<tr>")
+    for (i = 0; i < long1; i++) {
+        var colores1 = color1[i];
+        if (posInicial[0]==1 && posInicial[1]==i+1) {
+            document.write("<td bgcolor=\"" + colores1 + "style=border: 1px solid black" + "\"><font size = 10>");
+        } else {
+            document.write("<td bgcolor=\"" + colores1 + "\"><font size = 10>");
+        }
+        document.write(fila1[i])
+        document.write("</td>")
+    }
+    document.write("</tr>");
+
+    document.write("<tr>")
+    for (i = 0; i < long2; i++) {
+        var colores2 = color2[i];
+        if (posInicial[0]==1 && posInicial[1]==i+1) {
+            document.write("<td bgcolor=\"" + colores2 + "style=border: 1px solid black" + "\"><font size = 10>");
+        } else {
+            document.write("<td bgcolor=\"" + colores2 + "\"><font size = 10>");
+        }
+        document.write(fila2[i])
+        document.write("</td>")
+    }
+    document.write("</tr>")
+
+    document.write("<tr>")
+    for (i = 0; i < long3; i++) {
+        var colores3 = color3[i];
+        if (posInicial[0]==1 && posInicial[1]==i+1) {
+            document.write("<td bgcolor=\"" + colores3 + "style=border: 1px solid black" + "\"><font size = 10>");
+        } else {
+            document.write("<td bgcolor=\"" + colores3 + "\"><font size = 10>");
+        }
+        document.write(fila3[i])
+        document.write("</td>")
+    }
+    document.write("</tr>")
+
+    document.write("<tr>")
+    for (i = 0; i < long4; i++) {
+        var colores4 = color4[i];
+        if (posInicial[0]==1 && posInicial[1]==i+1) {
+            document.write("<td bgcolor=\"" + colores4 + "style=border: 1px solid black" + "\"><font size = 10>");
+        } else {
+            document.write("<td bgcolor=\"" + colores4 + "\"><font size = 10>");
+        }
+        document.write(fila4[i])
+        document.write("</td>")
+    }
+    document.write("</tr>")
+
+    document.write("<tr>")
+    for (i = 0; i < long5; i++) {
+        var colores5 = color5[i];
+        if (posInicial[0]==1 && posInicial[1]==i+1) {
+            document.write("<td bgcolor=\"" + colores5 + "style=border: 1px solid black" + "\"><font size = 10>");
+        } else {
+            document.write("<td bgcolor=\"" + colores5 + "\"><font size = 10>");
+        }
+        document.write(fila5[i])
+        document.write("</td>")
+    }
+    document.write("</tr>")
+
+    document.write("<tr>")
+    for (i = 0; i < long6; i++) {
+        var colores6 = color6[i];
+        if (posInicial[0]==1 && posInicial[1]==i+1) {
+            document.write("<td bgcolor=\"" + colores6 + "style=border: 1px solid black" + "\"><font size = 10>");
+        } else {
+            document.write("<td bgcolor=\"" + colores6 + "\"><font size = 10>");
+        }
+        document.write(fila6[i])
+        document.write("</td>")
+    }
+    document.write("</tr>")
+}
+
+tabla(fila1);
+
+
+//Zona de console.log
+
+console.log(`La posición inicial es (${posInicial})`);
+console.log(`La posición final es (${posFinal})`)
+
+</script>
+
+</body>
+</html>
